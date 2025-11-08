@@ -225,6 +225,16 @@ h2 {
     margin: 5px;
 }
 
+.city {
+    color: var(--accent1--color);
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.totalCreditsCert01 {
+    color: var(--accent1--color);
+}
+
 .courseButton {
     display: inline-block;
     padding: 0.25rem 1rem;
