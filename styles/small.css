@@ -1,53 +1,13 @@
 :root {
-    /*Breakpoint 
-    --desktop-vw: 1200px;
-    --laptop-vw: 1024px;
-    --table-vw: 768px;
-    --phone-vw: 480px;
-    */
+    --primary--color: rgb(7, 7, 88);
+    --secondary--color: rgb(168, 150, 150);
+    --accent1--color: white;
+    --accent2--color: rgb(59, 5, 59);
+    --accent3--color: rgb(30, 122, 30);
 
-    /* CSS HEX */
-    --true-blue: #0466c8ff;
-    --sapphire: #0353a4ff;
-    --yale-blue: #023e7dff;
-    --oxford-blue: #002855ff;
-    --oxford-blue-2: #001845ff;
-    --oxford-blue-3: #001233ff;
-    --delft-blue: #33415cff;
-    --paynes-gray: #5c677dff;
-    --slate-gray: #7d8597ff;
-    --cool-gray: #979dacff;
-    --alice-blue: #edf6f9ff;
-
-    /* Text Colors */
-    /* Headlines on a white background */
-    --headline-color-on-white: var(--oxford-blue-3);
-    /* Headlines on a colored background */
-    --headline-color-on-color: var(--alice-blue);
-    /* Paragraph text on a white background */
-    --paragraph-color-on-white: var(--secondary-color);
-    /* Paragraph text on a colored background */
-    --paragraph-color-on-color: var(--accent3-color);
-
-    --paragraph-background-color: var(--alice-blue);
-
-    /* Navigation Colors */
-    --nav-link-color: var(--oxford-blue-3);
-    --nav-background-color: var(--cool-gray);
-    --nav-hover-link-color: var(--oxford-blue-3);
-    --nav-hover-background-color: var(--true-blue);
-
-    --barlow-regular-font-family: "Barlow", sans-serif;
-    --barlow-regular-font-weight: 400;
-    --barlow-regular-font-style: normal;
-
-    --lato-regular-font-family: "Lato", sans-serif;
-    --lato-regular-font-weight: 400;
-    --lato-regular-font-style: normal;
-
-    --font-size-small: 16px;
-    --font-size-base: 20px;
-    --font-size-large: 24px;
+    --font-family: "Roboto", sans-serif;
+    --poppins-regular-weight: 900;
+    --poppins-thin-weight: 100;
 }
 
 nav,
@@ -57,11 +17,11 @@ h3,
 h4,
 h5,
 li {
-    font-family: var(--lato-regular-font-family);
+    font-family: "Roboto", sans-serif;
 }
 
 p {
-    font-family: var(--barlow-regular-font-family);
+    font-family: var(--font-family);
 }
 
 body {
@@ -69,11 +29,10 @@ body {
     flex-direction: column;
 }
 
-/*Header */
 header,
 footer {
-    background-color: var(--oxford-blue);
-    color: var(--alice-blue);
+    background-color: var(--primary--color);
+    color: var(--accent1--color);
 }
 
 header {
@@ -103,7 +62,7 @@ header {
     width: 80px;
     height: 141px;
     box-sizing: border-box;
-    border: 2.5px var(--alice-blue) solid;
+    border: 2.5px var(--accent1--color) solid;
     margin: 1.5rem 0;
     border-radius: 10px;
     overflow: hidden;
@@ -114,24 +73,21 @@ header {
 
 header span {
     margin-left: 20px;
-    font-size: var(--font-size-base);
+    font-size: larger;
     font-weight: bold;
 }
-
-/* mobile **************************/
-/*Hamburger menu*/
 
 #menu {
     display: block;
     font-size: 40px;
     text-decoration: none;
     padding: 8px 12px;
-    background-color: var(--oxford-blue);
-    color: var(--alice-blue);
+    background-color: var(--primary--color);
+    color: var(--accent1--color);
 }
 
 #menu {
-    font-family: Roboto, sans-serif;
+    font-family: var(--font-family);
     position: absolute;
     top: 1.6rem;
     right: 1.5rem;
@@ -144,7 +100,7 @@ header span {
 }
 
 nav {
-    background-color: var(--yale-blue);
+    background-color: var(--secondary--color);
 }
 
 nav ul {
@@ -155,20 +111,20 @@ nav ul {
 
 nav li {
     display: none;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid var(--secondary--color)
 }
 
 nav a {
     display: block;
-    color: var(--alice-blue);
+    color: var(--accent1--color);
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
 }
 
 nav a:hover:not(.active) {
-    background-color: var(--nav-hover-background-color);
-    color: var(--nav-hover-link-color);
+    background-color: var(--accent2--color);
+    color: var(--accent3--color);
 }
 
 nav li:last-child {
@@ -176,8 +132,8 @@ nav li:last-child {
 }
 
 nav a.active {
-    background-color: #fef9d9;
-    color: var(--oxford-blue-3);
+    background-color: var(--accent1--color);
+    color: var(--primary--color);
 }
 
 .open li {
@@ -188,7 +144,6 @@ nav a.active {
     content: "X";
 }
 
-/*Content*******************/
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -201,28 +156,30 @@ main section {
     border-radius: 5px;
     box-shadow: 6px 4px 8px;
     margin: 10px auto;
-    background-color: var(--paragraph-background-color);
+    background-color: var(--primary--color);
     width: fit-content;
     text-align: center;
 }
 
 section h1 {
-    background-color: var(--oxford-blue-3);
-    color: var(--headline-color-on-color);
+    background-color: var(--primary--color);
+    color: white;
+    text-decoration: underline;
     margin: 0;
     border-radius: 5px 5px 0 0;
-    font-size: var(--font-size-base);
+    font-size: larger;
     padding: 10px 0;
 }
 
 section ul {
     padding: 0 40px;
     margin: 10px 0;
+    color: var(--accent1--color);
 }
 
 section li {
     text-align: left;
-    font-size: var(--font-size-small);
+    font-size: larger;
 }
 
 picture {
@@ -242,7 +199,7 @@ section img {
 }
 
 section p {
-    font-size: var(--font-size-small);
+    font-size: larger;
     margin: 0 0 10px 0;
 }
 
@@ -258,6 +215,11 @@ section p {
     padding-top: 10px;
 }
 
+h2 {
+    color: var(--accent1--color);
+    text-decoration: underline;
+}
+
 .courseButton {
     flex: 1 1 100%;
     margin: 5px;
@@ -267,7 +229,7 @@ section p {
     display: inline-block;
     padding: 0.25rem 1rem;
     border-radius: 5rem;
-    color: var(--alice-blue);
+    color: var(--primary--color);
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 0.15rem;
@@ -284,7 +246,7 @@ section p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--slate-gray);
+    background-color: var(--secondary--color);
     border-radius: 5rem;
     z-index: -2;
 }
@@ -296,14 +258,14 @@ section p {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: var(--alice-blue);
+    background-color: var(--secondary--color);
     transition: all 0.3s;
     border-radius: 5rem;
     z-index: -1;
 }
 
 .courseButton:hover {
-    color: var(--oxford-blue-3);
+    color: var(--accent3--color);
 }
 
 .courseButton:hover:before {
@@ -317,7 +279,7 @@ section p {
 }
 
 .course {
-    border: var(--oxford-blue-3) solid 2px;
+    border: var(--accent3--color);
     width: 80%;
     padding: 10px;
     border-radius: 5px;
@@ -329,18 +291,18 @@ section p {
 }
 
 .course h2 {
-    font-size: var(--font-size-small);
+    font-size: larger;
     margin: 0;
     padding: 0;
 }
 
 .courseNoComplete {
-    background-color: var(--alice-blue);
+    background-color: var(--accent3--color);
     color: var(--oxford-blue-3);
 }
 
 .courseComplete {
-    background-color: var(--yale-blue);
+    background-color: var(--primary--color);
     color: white;
 }
 
@@ -367,7 +329,7 @@ section p {
     transform: scale(0.1, 1);
 }
 
-.course:hover h3 {
+.course:hover h2 {
     letter-spacing: 2px;
 }
 
@@ -394,11 +356,11 @@ section p {
 }
 
 dialog {
-    border: 1px solid var(--oxford-blue-3);
+    border: 1px solid gray;
     border-radius: 0.25rem;
     padding: 1rem;
-    background-color: var(--paragraph-background-color);
-    box-shadow: 0 0 3rem var(--oxford-blue-3);
+    background-color: var(--primary--color);
+    box-shadow: 0 0 3rem var(--secondary--color);
     width: 90%;
     max-width: 600px;
 }
@@ -412,7 +374,7 @@ dialog button {
     top: 23px;
     right: 23px;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--oxford-blue-3);
+    border: 1px solid var(--primary--color);
 }
 
 /*Footer */
@@ -454,7 +416,7 @@ footer p {
     }
 
     main p {
-        font-size: var(--font-size-base);
+        font-size:var(--font-family);
     }
 
     section {
