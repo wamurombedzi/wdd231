@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("./data/members.json")
             .then((response) => response.json())
             .then((data) => {
-                // Filter members with gold or silver membership levels
                 const eligibleMembers = data.data.filter(
                     (member) =>
                         member.membershipLevel.includes("gold") ||
                         member.membershipLevel.includes("silver")
                 );
 
-                // Randomly select 2-3 members
                 const selectedMembers = [];
                 const numberOfMembers = Math.min(
                     eligibleMembers.length,
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectedMembers.push(eligibleMembers.splice(randomIndex, 1)[0]);
                 }
 
-                // Render the members
                 selectedMembers.forEach((member) => {
                     const memberDiv = document.createElement("div");
                     memberDiv.classList.add("member-card");
@@ -40,12 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((error) => console.error("Error loading members:", error));
     }
 
-    // Get all "Learn More" buttons
     const openButtons = document.querySelectorAll(".modal-open");
     const closeButtons = document.querySelectorAll(".modal-close");
     const modals = document.querySelectorAll(".modal");
 
-    // Function to open a modal
     openButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const modalId = button.getAttribute("data-modal");
@@ -54,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Function to close a modal
+
     closeButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
             const modal = e.target.closest(".modal");
@@ -62,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Close modal when clicking outside content
+  
     modals.forEach((modal) => {
         modal.addEventListener("click", (e) => {
             if (e.target === modal) {
@@ -75,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 const nav = document.querySelector(".header-nav");
 const menuBtn = document.querySelector(".menu-btn");
 
-//  getting current date
+
 const date = new Date();
-// getting the current month
+
 let currentMonth = date.getMonth();
-// getting the current year
+
 let currentYear = date.getFullYear();
 
 class Switch {
@@ -92,14 +87,13 @@ class Switch {
     }
 
     handleKeydown(event) {
-        // Only do something when space or return is pressed
+ 
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             this.toggleStatus();
         }
     }
 
-    // Switch state of a switch
     toggleStatus() {
         const currentState = this.switchBtn.getAttribute("aria-checked") === "true";
         const switchDot = this.switchBtn.querySelector(".switch span");
@@ -110,7 +104,6 @@ class Switch {
     }
 }
 
-// // Initialize switches
 window.addEventListener("load", function () {
     // Initialize the Switch component on all matching DOM nodes
     Array.from(document.querySelectorAll("[role^=switch]")).forEach((element) => {
@@ -119,7 +112,7 @@ window.addEventListener("load", function () {
     displayChamberMembers();
 });
 
-// Displaying Chamber members and there membership status
+
 function displayChamberMembers() {
     const memberCardBox = document.querySelector(".member-card-section");
     const gridBtn = document.getElementById("grid-view");
@@ -157,7 +150,6 @@ function displayChamberMembers() {
     };
     getMembersData();
 
-    // ///////////////////////////////////////////////////////
     const saveView = function (view) {
         localStorage.setItem("localView", JSON.stringify(view));
     };
@@ -186,7 +178,6 @@ function displayChamberMembers() {
     listBtn.addEventListener("click", changeView.bind(listBtn));
 }
 
-// //////////////////////////////////////////////
 function toggleNav() {
     const toggleMenu = function () {
         nav.classList.toggle("show-nav");
@@ -196,9 +187,6 @@ function toggleNav() {
 }
 toggleNav();
 
-// ///////////////////////////////////////////////
-// The active page functionality - highlight the current  active
-// page
 function activePage() {
     function setActiveLink() {
         const navLinks = document.querySelectorAll(".nav-links");
@@ -215,10 +203,7 @@ function activePage() {
     setActiveLink();
 }
 activePage();
-/////////////////// HOME PAGE SECTION ////////////////////
-//////////////////////////////////////////////////////////
-// The weather forecast functionality. Displaying the weather
-// forecast to the user
+
 function weatherForecast() {
     const lat = -25.74433236181061;
     const long = 28.234333823643258;
@@ -262,7 +247,6 @@ function weatherForecast() {
 }
 weatherForecast();
 
-// ////////////////////////////////////////////////////////////
 function displayDate() {
     const theYear = document.querySelector("#year");
     const lastModify = document.querySelector(".last-modify");
@@ -287,45 +271,7 @@ function displayDate() {
 }
 displayDate();
 
-////////////////////// DISCOVER PAGE SECTION /////////////////////
-/////////////////////////////////////////////////////////////
-function feedbackMessage() {
-    const messageBox = document.querySelector(".message-box");
 
-    const welcomeMsg = `<h1>Welcome! Let us know if you have any questions.</h1>`;
-    const welcomeBack = `<h1>Back so soon! Awesome!</h1>`;
-    const sinceLastVist = `<h1>You last visited [n] days ago</h1>`;
-
-    // number of milliseconds in a day
-    const millisecToDay = 1000 * 60 * 60 * 24;
-
-    // checking if previous visit timestamp exist in local storage
-    let lastVisit = Number(JSON.parse(localStorage.getItem("visitTimeStamp")));
-    // getting today's date in milliseconds
-    const currentTime = Date.now();
-
-    if (lastVisit) {
-        // calculating the days past since the last visit
-
-        const daysPast = Math.abs(
-            Math.trunc((currentTime - lastVisit) / millisecToDay)
-        );
-        // give user feedback based on the days past
-        if (daysPast === 0) {
-            messageBox.innerHTML = welcomeBack;
-        } else {
-            messageBox.innerHTML = sinceLastVist.replace("[n]", daysPast);
-        }
-    } else {
-        messageBox.innerHTML = welcomeMsg;
-    }
-
-    localStorage.setItem("visitTimeStamp", JSON.stringify(currentTime));
-}
-feedbackMessage();
-
-// /////////////////////////////////////////////////////////
-// // function for rendering the days in the calendar
 function displayCalender() {
     const daysContainer = document.querySelector(".days");
     const nextMonthBtn = document.querySelector(".next-btn");
@@ -444,14 +390,12 @@ function displayCalender() {
 }
 displayCalender();
 
-///////////////////////////////////////////////////////////
-// Spotlight box section - for homepage
-// Function to display spotlight members
+
 async function displaySpotlightMembers() {
     const membersUrl = "../data/members.json";
     const response = await fetch(membersUrl);
     const data1 = await response.json();
-    // Filter data to include only gold or silver members
+
     const goldSilverMembers = data1.data.filter(
         (member) =>
             member.membershipLevel === "images/gold.png" ||
@@ -459,17 +403,16 @@ async function displaySpotlightMembers() {
     );
     console.log(goldSilverMembers);
 
-    // Shuffle the data array to randomize the order
+
     shuffleArray(goldSilverMembers);
 
-    // Select the first two members
+
     const spotlightMembers = data1.slice(0, 2);
 
-    // Get the spotlight elements in the HTML
     const spotlight1 = document.querySelector(".spotlight-1");
     const spotlight2 = document.querySelector(".spotlight-2");
 
-    // Function to render spotlight member HTML
+  
     function renderSpotlightMember(member) {
         return `
     <img width="300" height="300" src="${member.image}" alt="${member.name} Logo">
@@ -480,7 +423,6 @@ async function displaySpotlightMembers() {
     console.log(renderSpotlightMember(spotlightMembers[0]));
     spotlight2.innerHTML = renderSpotlightMember(spotlightMembers[1]);
 
-    // Function to shuffle an array randomly
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -490,8 +432,6 @@ async function displaySpotlightMembers() {
 }
 displaySpotlightMembers();
 
-//////////////////////////////////////////////////////////
-// Meetup banner
 function meetupBanner() {
     const date = new Date();
 
