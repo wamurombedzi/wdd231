@@ -3,7 +3,7 @@
     --secondary-color: #3f3f45;
     --tertiary-color: #2c2ca7;
     --default-color: #ffffff;
-    --optional-color: #000000;
+    --optional-color: #7d8b94;
     --calendar-text-color: #370637;
 
     --np-membership: rgb(8, 66, 85);
@@ -16,6 +16,21 @@
     --box-shadow-effect: 8px 8px 8px -6px rgba(6, 7, 66, 0.18);
     --box-shadow-all-4sides: 0 0 2rem rgba(12, 109, 46, 0.18);
     --box-shadow-all-4sides-cleaner: 0 0 2rem -5px rgba(61, 8, 66, 0.18);
+
+    --glass-effect-bg: rgba(186, 192, 205, 0.55);
+    --blur-effect: blur(2.5rem);
+    --box-shadow-effect: 8px 8px 8px -6px rgba(0, 0, 0, 0.18);
+    --box-shadow-all-4sides: 0 0 2rem rgba(0, 0, 0, 0.18);
+    --box-shadow-all-4sides-cleaner: 0 0 2rem -5px rgba(0, 0, 0, 0.18);
+
+    --step--2: clamp(0.63rem, calc(0.72rem + -0.11vw), 0.69rem);
+    --step--1: clamp(0.83rem, calc(0.83rem + 0.02vw), 0.84rem);
+    --step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --step-1: clamp(1.2rem, calc(1.1rem + 0.52vw), 1.5rem);
+    --step-2: clamp(1.44rem, calc(1.25rem + 0.97vw), 2rem);
+    --step-3: clamp(1.73rem, calc(1.4rem + 1.63vw), 2.66rem);
+    --step-4: clamp(2.07rem, calc(1.56rem + 2.57vw), 3.55rem);
+    --step-5: clamp(2.49rem, calc(1.71rem + 3.91vw), 4.74rem);
     
     --default-gap: 2em;
     --default-gap: 1em;
@@ -25,52 +40,6 @@
     --paragraph-font: "Poppins", sans-serif;
 }
 
-/* Custom CSS Properties */
-:root {
-    /* Project colors */
-    --default-color: #eef0f4;
-    --optional-color: #d68c45;
-    --optional2-color: #f90a39;
-    --calnder-text-color: #1d1d1d;
-    --bg-color: #f1f1fb;
-
-    --np-membership: #125b50;
-    --bronze-membership: #cd5c08;
-    --silver-membership: #eeeeee;
-    --gold-membership: #ffb000;
-
-    --primary-shade-1: #152246;
-    --tertiary-shade-1: #c5c8f4;
-    --default-shade-1: #d2d7e0;
-
-    --primary-shade-2: #212d4d;
-    --tertiary-shade-2: #a5a9e8;
-    --default-shade-2: #bac0cd;
-
-    --glass-effect-bg: rgba(186, 192, 205, 0.55);
-    --blur-effect: blur(2.5rem);
-    --box-shadow-effect: 8px 8px 8px -6px rgba(0, 0, 0, 0.18);
-    --box-shadow-all-4sides: 0 0 2rem rgba(0, 0, 0, 0.18);
-    --box-shadow-all-4sides-cleaner: 0 0 2rem -5px rgba(0, 0, 0, 0.18);
-
-    --default-gap: 2em;
-    --default-gap: 1em;
-
-    --input-border: #8b8a8b;
-    /* change the values below to your chosen font(s) */
-    --heading-font: "IBM Plex Sans Condensed", sans-serif;
-    --paragraph-font: "Poppins", sans-serif;
-
-    /* Fluid typography */
-    --step--2: clamp(0.63rem, calc(0.72rem + -0.11vw), 0.69rem);
-    --step--1: clamp(0.83rem, calc(0.83rem + 0.02vw), 0.84rem);
-    --step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
-    --step-1: clamp(1.2rem, calc(1.1rem + 0.52vw), 1.5rem);
-    --step-2: clamp(1.44rem, calc(1.25rem + 0.97vw), 2rem);
-    --step-3: clamp(1.73rem, calc(1.4rem + 1.63vw), 2.66rem);
-    --step-4: clamp(2.07rem, calc(1.56rem + 2.57vw), 3.55rem);
-    --step-5: clamp(2.49rem, calc(1.71rem + 3.91vw), 4.74rem);
-}
 
 /* Basic resets */
 *,
