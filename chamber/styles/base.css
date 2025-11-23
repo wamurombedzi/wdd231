@@ -73,7 +73,6 @@ body {
 .homepage-body header {
     /* padding-inline: 2rem; */
     padding-block-end: 2rem;
-    background: url(../images/hero.WEBP);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
