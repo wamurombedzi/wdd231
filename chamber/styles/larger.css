@@ -10,6 +10,11 @@
         place-items: center;
     }
 
+    .directory-page-body header nav,
+    .join-page-body header nav {
+        align-self: center;
+    }
+
     .homepage-body header {
         min-height: 100vh;
         grid-template-rows: 60px 1fr;

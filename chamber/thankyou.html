@@ -10,8 +10,7 @@
     <meta property="og:title" content="Cyprus Chamber of Commerce and Industry">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wamurombedzi.github.oi/wdd231/chamber/index.html/">
-    <meta property="og:image" content="https://github.com/wamurombedzi/wdd231/blob/main/chamber/images/hero.WEBP">
-    <meta property="og:site_name" content="Cyprus Chamber of Commerce and Industry">
+    <meta property="og:site_name" content="Cyprus Chamber of Commerce and Industry serves to promote and protect the interests of the Cypriot business community by safeguarding and developing the economy and improving the standard of living ">
     <meta property="og:description"
         content="The Cyprus Chamber of Commerce the one-stop website for everything commerce, and community development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +22,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script src="scripts/thankyou.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 </head>
 
 <body class="thankyou-page-body">
@@ -35,7 +35,7 @@
 
         <div class="logo-box">
             <a href="index.html">
-                <img src="images/pic.svg" alt="Cyprus Chamber of Commerce and Industry logo" class="logo" width="323" height="130" />
+                <img src="images/pic.svg" alt="Cyprus Chamber of Commerce and Industry logo" class="logo" width="323" height="130">
             </a>
         </div>
 
@@ -80,22 +80,73 @@
                 into trade issues and EU matters, receive discounted rates on certifications, and connect with other businesses both
                 locally and internationally.
             </p>
+            <div class="form-container">
+                <div class="svg-box">
+                    <img src="images/join.png" width="511" height="532" alt="Svg image of a man illustration giving thumbs up ">
+                </div>
+            
+                <div class="form-box">
+                    <form action="thankyou.html" method="get">
+                        <div class="forms">
+                            <label class="top">First Name<span class="asterisk">*</span>
+                                <input type="text" name="fname" id="fname" required >
+                            </label>
+            
+                            <label class="top">Last Name<span class="asterisk">*</span>
+                                <input type="text" name="lname" id="lname" required >
+                            </label>
+            
+                            <label class="top">Organizational title<span class="asterisk">*</span>
+                                <input type="text" name="title" id="title" pattern="/^[A-Za-z -]{7,}$/">
+                            </label>
+            
+                            <label class="top">Email address<span class="asterisk">*</span>
+                                <input type="email" name="email" id="email" placeholder="example@domain.com" required>
+                            </label>
+            
+                            <label class="top">Phone number<span class="asterisk">*</span>
+                                <input type="tel" name="phone" id="phone" required>
+                            </label>
+            
+                            <label class="top">Bussiness name<span class="asterisk">*</span>
+                                <input type="text" name="company-name" id="company-name" require>
+                            </label>
 
-            <div class="summary-box">
-                <h2>Your Submitted Details:</h2>
-                <ul>
-                    <li><strong>First Name:</strong> </li>
-                    <li><strong>Last Name:</strong> </li>
-                    <li><strong>Email Address:</strong> </li>
-                    <li><strong>Phone Number:</strong> </li>
-                    <li><strong>Organization Name:</strong> </li>
-                    <li><strong>Membership Level:</strong> </li>
-                    <li><strong>Date Submitted:</strong> </li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
+                            <label class="top">
+                                <input type="hidden" name="timestamp">
+                            </label>
+                </div>
+            </section>
+        </main>
+    <footer>
+        <div class="contact-box">
+            <p class="footer-captions">Contact Us</p>
+            <address>
+                <a href="wadzanaimurombedzi0@gmail.com">📧 cyprus chamber of commerce and industry@outlook.com</a>
+                <!-- <br> -->
+                <a href="tel:+35722567845"></a>
+                <p>📍 456 larnaca Street</p>
+                <p>Kiti Province</p>
+                <p>Larnaca, Cyprus</p>
+            </address>
+        </div>
+        <div class="quick-link-box">
+            <p class="footer-captions">Quick Links</p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-socials">
+            <p class="footer-captions">Stay Connected</p>
+        </div>
+        <div class="copyright-box">
+            <p>&copy; <span id="year"></span> WADZANAI MUROMBEDZI ❤❤ - WDD231 </p>
+            <p>Last modified: <span class="last-modify"></span></p>
+            <p id="analytics"></p>
+        </div>
+    </footer>
 </body>
 
 </html>
