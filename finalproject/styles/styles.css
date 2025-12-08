@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
 :root {
     --primary-color: lab(12.02% 8.55 -27.71);
-    --primary-color-dark: lab(14.53% 3.78 -24.36)
-    --text-dark: hsl(251, 83%, 16%);
+    --primary-color-dark: lab(14.53% 3.78 -24.36);
     --text-light: #1a0303;
     --extra-light: hsl(227, 26%, 65%);
     --white: hsl(0, 18%, 96%);
@@ -18,7 +15,6 @@
 }
 
 .section__container {
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     margin: auto;
     padding: 5rem 1rem;
